@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSP Skeleton Generator | NIST SP 800-171</title>
+<meta name="description" content="Free System Security Plan skeleton generator for NIST SP 800-171. Document all 110 requirements with implementation narratives and export a complete SSP draft.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">AI Tech Pros <span>MAPS Tools</span></div>
+    <h1>SSP Skeleton Generator</h1>
+    <p class="sub">Build your System Security Plan requirement by requirement. Without an SSP, no assessment can be completed. This gives you the full skeleton: every control, prompts for what assessors look for, and a clean export.</p>
+    <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+    <p class="muted small" id="progressText">0 of 110 requirements documented</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2>1. System information</h2>
+    <div class="grid2">
+      <label class="fld">Company name <input id="ci_company" placeholder="AI Tech Pros, Inc."></label>
+      <label class="fld">System / environment name <input id="ci_system" placeholder="Corporate IT System"></label>
+      <label class="fld">Author <input id="ci_author" placeholder="Name, Title"></label>
+      <label class="fld">Date <input id="ci_date" type="date"></label>
+      <label class="fld">CAGE code <input id="ci_cage" placeholder="Optional"></label>
+      <label class="fld">UEI <input id="ci_uei" placeholder="Optional"></label>
+    </div>
+    <label class="fld">System description <textarea id="ci_desc" rows="3" placeholder="What the system is, what it does, where it lives (on-prem, cloud provider, etc.)"></textarea></label>
+    <label class="fld">System boundary <textarea id="ci_boundary" rows="3" placeholder="What is in scope and what is out of scope. Name the network segments, cloud services, and endpoints that handle CUI."></textarea></label>
+    <label class="fld">CUI categories handled <textarea id="ci_cui" rows="2" placeholder="e.g., Export Controlled, Proprietary Business Information… or 'No CUI currently on company systems'"></textarea></label>
+    <div class="row">
+      <button id="importCalc" class="btn">Import statuses from SPRS Calculator</button>
+      <span class="muted small" id="importNote"></span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>2. Document each requirement</h2>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search requirements…">
+      <select id="familyFilter"><option value="">All families</option></select>
+      <select id="docFilter">
+        <option value="">All</option>
+        <option value="done">Documented</option>
+        <option value="todo">Not yet documented</option>
+      </select>
+    </div>
+    <div id="families"></div>
+  </section>
+
+  <section class="card">
+    <h2>3. Export your SSP</h2>
+    <div class="row">
+      <button id="exportMd" class="btn primary">Download SSP (Markdown)</button>
+      <button id="exportCsv" class="btn">Download tracking CSV</button>
+      <button id="printBtn" class="btn ghost">Print</button>
+      <button id="resetAll" class="btn ghost danger">Clear all</button>
+    </div>
+    <p class="muted small">Review every narrative before you attest. This skeleton organizes your answers; the accuracy of each statement is yours.</p>
+  </section>
+
+  <footer class="foot">
+    <p>Free tool from <strong>Neo Harvard</strong>, CEO of <a href="https://aitechpros.ai">AI Tech Pros</a>. Part of the <a href="https://github.com/nehemiah313/maps-framework">MAPS framework</a> family. Estimates only, not legal advice. Requirement text: NIST SP 800-171 Rev. 2 (public domain).</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
