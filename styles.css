@@ -97,3 +97,6 @@ body { margin: 0; background: var(--bg); color: var(--text); font-family: -apple
   .card { box-shadow: none; }
   .ctrl { break-inside: avoid; }
 }
+
+.legal-line{margin-top:1rem;font-size:.85rem;color:#6b7280}
+.storage-note{font-size:.8rem;color:#9ca3af;margin-top:.4rem}
